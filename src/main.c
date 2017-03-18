@@ -21,7 +21,7 @@ int main()
 
 void listen_for_commands() 
 {
-	char address_high, address_low, value_high, value_low;
+	uint8_t address_high, address_low, value_high, value_low;
 	
 	uint16_t address, value;
 
@@ -102,17 +102,17 @@ void listen_for_commands()
 
 					value = icsp_load_word();
 
-					uart_putchar((uint8_t) (value >> 8));
+					uart_putchar((value >> 8));
 
-					uart_putchar((uint8_t) value);
+					uart_putchar(value);
 
 					uart_putchar('R');
 				}
 				else
 				{
-					uart_putchar((char) 0);
+					uart_putchar(0);
 
-					uart_putchar((char) 0);
+					uart_putchar(0);
 
 					uart_putchar('R');					
 				}
