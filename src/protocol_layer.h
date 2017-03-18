@@ -1,6 +1,6 @@
 // Time constants
 #define T_ERAB	1
-#define T_PINT	20
+#define T_PINT	5
 
 // ICSP communication
 
